@@ -180,18 +180,18 @@ do {
     }
     
     for enumerated in array.enumerated() {
-        print("for break: \(enumerated.element))
-              if enumerated.offset == 4 {     //hasta la posición #4
+        print("for break: \(enumerated.element)")
+        if enumerated.offset == 4 {     //hasta la posición #4
             break
         }
     }
-              
-              
+    
+    
     for enumerated in array.enumerated() {
         if enumerated.offset % 2 == 0 { continue }
         print("for continue: \(enumerated.element)")
     }
-              
+}
               
 print("=================")
               
@@ -206,9 +206,6 @@ do {
             }
             
             decirHola()
-            
-            
-            
 }
               
               
