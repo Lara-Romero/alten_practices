@@ -20,7 +20,7 @@ extension Persona {         // Las extensiones nos permiten crear variables y m√
         self.init(nombre: "", apellidos: "")
     }
     
-    var nombreCompleto: String {      //<- Permiten variables empaquetadas
+    var nombreCompleto: String {      //<- Permiten variables computadas
         "\(nombre) \(apellidos)"
     }
     
