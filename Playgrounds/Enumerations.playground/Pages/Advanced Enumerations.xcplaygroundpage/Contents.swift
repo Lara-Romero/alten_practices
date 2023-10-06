@@ -63,15 +63,17 @@ EstadoPedido.allCases.forEach {
     print($0)
 }
 
+print("--------------------------------")
 
-// Noticias, videos, anuncios
+// Queremos mostrar estos 3 tipos de datos: Noticias, videos, anuncios
 
 enum Celda: RawRepresentable {
     case noticia(String, String)
     case video(titulo: String, url: String)
     case anuncio(String)
-//    case anuncio(String, String) <- No se permite la sobrecarga
+//    case anuncio(String, String) <- No se permite la sobrecarga de un caso
     
+    //Para imprimir el valor que le damos al caso (lo de después del igual) personal por cada uno de los casos:
     var rawValue: String {
         switch self {
         case .noticia(let titulo, let descipcion):
@@ -99,18 +101,23 @@ print(celda)
 if let celda = celda {
     print(celda.rawValue)
 }
+
+//----------------------------------
+//Usamos el enumerador con valores asociados:
 var datos: [Celda] = [Celda]()
 
+//Rellenamos el array
 datos.append(Celda.noticia("Noticia 1", "Descripcion 1"))
 datos.append(Celda.noticia("Noticia 2", "Descripcion 2"))
-datos.append(.anuncio("anuncio 1"))
+datos.append(.anuncio("url anuncio 1"))
 datos.append(.video(titulo: "Video 1", url: "url video 1"))
 datos.append(.video(titulo: "Video 2", url: "url video 2"))
-datos.append(.anuncio("anuncio 2"))
+datos.append(.anuncio("url anuncio 2"))
 
 print("============")
+//Para poder imprimir esto:
 datos.forEach{
-    switch $0 {
+    switch $0 {          // $0 es el caso enumerado de la Celda
     case .noticia(let titulo, let descipcion):
         print("Es una noticia con \(titulo) y \(descipcion)")
     case .video(let titulo, let url):
@@ -120,6 +127,7 @@ datos.forEach{
     }
 }
 
+//-------------------------------------
 enum ExpresionAritmetica {
     case numero(Int)
     indirect case suma(ExpresionAritmetica, ExpresionAritmetica)
