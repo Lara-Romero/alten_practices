@@ -46,6 +46,7 @@ var enum2: EjemploEnum<Int> = EjemploEnum.parar
 
 print("=============")
 
+//Restricciones
 protocol Container {
     associatedtype Item
     
@@ -71,7 +72,7 @@ struct OtroStack<U>: Container {
     }
     
 }
-
+ //Para comparar los items de los dos protocolos
 func allItemsMatch<C1: Container, C2: Container>(_ someContainer: C1, _ anotherContainer: C2) -> Bool where C1.Item == C2.Item, C1.Item: Equatable {
     return someContainer.items == anotherContainer.items
 }
@@ -81,7 +82,7 @@ var stack2 = Stack(items: ["1", "2", "3"])
 var stack3 = Stack(items: [1, 2])
 var stack4 = OtroStack(items: [1, 2, 3])
 
-//allItemsMatch(stack1, stack2) // <- Esto no está permitido
+//allItemsMatch(stack1, stack2) // <- Esto no está permitido, los stack tienen que ser del mismo tipo
 print(allItemsMatch(stack1, stack3))
 print(allItemsMatch(stack1, stack4))
 
