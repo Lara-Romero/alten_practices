@@ -148,7 +148,7 @@ do {
 
 print("========")
 
-// drop
+// drop: elimina los elementos que cumplen x condición
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
     items.drop {
@@ -160,7 +160,7 @@ do {
 
 print("========")
 
-// prefix
+// prefix: se muestran los elementos que cumplan true, cuando un elemento deje de cumplir la condición, deja de mostrar elementos
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
     items.prefix {
@@ -172,7 +172,7 @@ do {
 
 print("========")
 
-// first
+// first: nos muestra el primer elemento del array que cumpla la condición
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
     
@@ -187,7 +187,7 @@ do {
 
 print("========")
 
-// last
+// last: nos muestra el último elemento del array que cumpla la condición
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
     
@@ -202,6 +202,7 @@ do {
 
 print("========")
 
+//Podemos usarlas juntas:
 do {
     let items = [1, 7, nil, 2, 5, 6, 3, nil, 11, 87]
     items.compactMap {
