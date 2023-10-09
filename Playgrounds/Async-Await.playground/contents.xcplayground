@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
-        <page name='Async-let'/>
         <page name='Async-Await'/>
         <page name='Repaso'/>
+        <page name='Async-let'/>
         <page name='Cancelacion'/>
         <page name='for-await-in'/>
         <page name='asyncsequences'/>
