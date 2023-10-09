@@ -77,11 +77,11 @@ do {
 
 print("========")
 
-// filter
+// filter : filtramos
 do {
     let items = [1, 2, 5, 6, 3, 11, 87]
     items.filter {
-        $0 % 2 == 1
+        $0 % 2 == 1    //condición
     }.forEach {
         print($0)
     }
@@ -89,7 +89,7 @@ do {
 
 print("========")
 
-// sorted
+// sorted: función para ordenar de mayor a menor o viceversa
 do {
     let items = [1, 2, 5, 6, 3, 11, 87]
     
@@ -102,7 +102,7 @@ do {
 
 print("========")
 
-// contains
+// contains: nos devuelve true o false en base a si el array contiene o no el elemento que le digamos
 do {
     let items = [1, 2, 5, 6, 3, 11, 87]
     let result1 = items.contains {
@@ -118,7 +118,7 @@ do {
 
 print("========")
 
-// allSatisfy
+// allSatisfy: vemos si todos los elementos del array satisfacen una condición determinada
 do {
     let items = [1, 2, 5, 6, 3, 11, 87]
     let result1 = items.allSatisfy {
@@ -134,7 +134,8 @@ do {
 
 
 print("========")
-// removeAll
+
+// removeAll: elimina todos los elementos que cumplan la condición que digamos. en este caso sí se modifica el array
 do {
     var items = [1, 2, 5, 6, 3, 11, 87]
     items.removeAll {
@@ -146,6 +147,7 @@ do {
 }
 
 print("========")
+
 // drop
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
@@ -157,6 +159,7 @@ do {
 }
 
 print("========")
+
 // prefix
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
@@ -168,6 +171,7 @@ do {
 }
 
 print("========")
+
 // first
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
@@ -182,6 +186,7 @@ do {
 }
 
 print("========")
+
 // last
 do {
     let items = [1, 7, 2, 5, 6, 3, 11, 87]
