@@ -79,7 +79,7 @@ do {
         
         init() { }
         
-        init(_ phValue: Double) {
+        init(_ phValue: Double) {       // podemos usar los init
             self.phValue = phValue
         }
         
@@ -97,8 +97,8 @@ do {
                 }
             }
         }
-        
-        var projectedValue: PH {
+         
+        var projectedValue: PH {     // podemos acceder a la propiedad del phValue con el dólar -> $ como en la lína 116
             return self
         }
     }
