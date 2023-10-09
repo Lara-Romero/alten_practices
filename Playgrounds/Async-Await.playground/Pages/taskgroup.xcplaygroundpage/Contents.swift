@@ -1,7 +1,11 @@
 import UIKit
 
+//Como el async let pero sin saber el nº de datos a descargar
+//Tenemos withTaskGroup y withThrowingTaskGroup (sin contemplar excepciones y contemplándolas)
+//
 Task {
     do {
+        //En el Json una de las url da error, por lo que tenemos que controlar el error
         let url = URL(string: "https://raw.githubusercontent.com/SDOSLabs/JSON-Sample/master/Products/images_test.json")!
         let (data, _) = try await URLSession.shared.data(from: url)
         let arrayUrlsImages = try JSONDecoder().decode([String].self, from: data)

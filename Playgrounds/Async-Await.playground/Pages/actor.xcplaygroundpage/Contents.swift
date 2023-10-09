@@ -1,28 +1,30 @@
 import UIKit
 
-
-
+//Es como el asyncsequence pero con más complejidad
+//Nos permite crear una secuencia de datos que se están enviando de forma constante, que es asíncrona, de
+// forma más controlada que con el asyncsequence
 struct Persona {
     var nombre: String {
         didSet {
             continuation?.yield("Nuevo nombre \(nombre)")
-        }
+        }   //Cada vez que se cambie el nombre, le mandamos el nuevo nombre
     }
     
     var apellidos: String {
         didSet {
             continuation?.yield("Nuevos apellidos \(apellidos)")
-        }
+        }    //Igual pero con los apellidos
     }
     
     var continuation: AsyncStream<String>.Continuation?
     
     mutating func createStream() -> AsyncStream<String> {
-        //AsyncThrowingStream
-        return AsyncStream(String.self) { continuation in
+        //AsyncThrowingStream -> el que permite lanzar excepciones
+        return AsyncStream(String.self) { continuation in     //la variable continuation
             self.continuation = continuation
             
-            continuation.onTermination = { termination in
+            continuation.onTermination = { termination in    // termination es un enum que indica que puede haber
+                                                                //casos
                 switch termination {
                 case .finished:
                     print("Fin del stream finished")
@@ -36,14 +38,14 @@ struct Persona {
 //            for count in 0...100 {
 //                continuation.yield("Vuelta \(count)")
 //            }
-////            continuation.yield("Prueba")
+////            continuation.yield("Prueba")    -> lo que queremos enviar
 ////            continuation.yield("Prueba 2")
 ////            continuation.yield("Prueba 3")
-//            continuation.finish()
+//            continuation.finish()    -> PAra terminarlos
         }
     }
     
-    mutating func cancelStream() {
+    mutating func cancelStream() {    //Si Cancelamos el lanzar nombre, nos manda al task
         continuation?.finish()
         continuation = nil
     }
